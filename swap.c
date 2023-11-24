@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 16:06:37 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 16:10:44 by npremont         ###   ########.fr       */
+/*   Created: 2023/11/23 12:01:55 by npremont          #+#    #+#             */
+/*   Updated: 2023/11/24 16:31:30 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_swap(t_list *stack)
 {
-	t_list	*tail;
+	void	*tmp;
 
-	if (*lst)
-	{
-		tail = ft_lstlast(*lst);
-		tail->next = new;
-		tail->next->prev = tail;
-		tail->next->next = NULL;
-	}
-	else
-		*lst = new;
+	tmp = stack->content;
+	stack->content = stack->next->content;
+	stack->next->content = tmp;
+}
+
+void	sa(t_list *a)
+{
+	ft_swap(a);
+	ft_printf("sa\n");
+}
+
+void	sb(t_list *b)
+{
+	ft_swap(b);
+	ft_printf("sb\n");
+}
+
+void	ss(t_list *a, t_list *b)
+{
+	ft_swap(a);
+	ft_swap(b);
+	ft_printf("ss\n");
 }

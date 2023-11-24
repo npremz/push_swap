@@ -1,41 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 18:30:10 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 16:42:55 by npremont         ###   ########.fr       */
+/*   Created: 2023/11/24 12:37:30 by npremont          #+#    #+#             */
+/*   Updated: 2023/11/24 15:59:50 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char *av[])
+void	ft_push(t_list **dst, t_list **src)
 {
-	char	**argv;
-	t_list	*a;
-	t_list	*b;
+	t_list	*node;
 
-	argv = ft_getargs(ac, av);
-	if (!argv)
-		return (1);
-	a = ft_stackinit(argv);
-	b = NULL;
-	if (!a)
-		return (ft_free_split(argv), 1);
-	rra(&a);
-	while (a)
+	if (!src)
+		return ;
+	node = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	node->prev = NULL;
+	if (!*dst)
 	{
-		printf("a : %s, %p\n", (char *)a->content, a);
-		a = a->next;
+		*dst = node;
+		node->next = NULL;
 	}
-	printf("\n");
-	while (b)
+	else
 	{
-		printf("b : %s, %p\n", (char *)b->content, b);
-		b = b->next;
+		node->next = *dst;
+		node->next->prev = node;
+		*dst = node;
 	}
-	return (0);
 }
+
+void	pa(t_list **a, t_list **b)
+{
+	ft_push(a, b);
+	ft_printf("pa\n");
+}
+
+void	pb(t_list **b, t_list **a)
+{
+	ft_push(b, a);
+	ft_printf("pb\n");
+}
+

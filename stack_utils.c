@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 16:06:37 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 16:10:44 by npremont         ###   ########.fr       */
+/*   Created: 2023/11/24 12:02:21 by npremont          #+#    #+#             */
+/*   Updated: 2023/11/24 12:21:22 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_stackinit(char **argv)
 {
-	t_list	*tail;
+	size_t	i;
+	t_list	*stack;
+	t_list	*node;
 
-	if (*lst)
+	i = 0;
+	stack = NULL;
+	node = NULL;
+	while (argv[i])
 	{
-		tail = ft_lstlast(*lst);
-		tail->next = new;
-		tail->next->prev = tail;
-		tail->next->next = NULL;
+		node = ft_lstnew(argv[i]);
+		if (!node)
+			return (ft_lstclear(&stack, free), NULL);
+		ft_lstadd_front(&stack, node);
+		++i;
 	}
-	else
-		*lst = new;
+	return (stack);
 }

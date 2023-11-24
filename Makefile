@@ -2,13 +2,13 @@ NAME = push_swap
 
 HEADER = ./
 
-SOURCES = main.c parsing.c free_utils.c
+SOURCES = main.c parsing.c free_utils.c stack_utils.c swap.c push.c rotate.c reverse_rotate.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
 LIB = libft.a
 
-GCC_FLAGS = -Wall -Wextra -Werror -g
+GCC_FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 CC = cc
 
@@ -43,7 +43,7 @@ clean:
 
 fclean:
 	@echo "Cleaning all..."
-	@make re -C libft
+	@make fclean -C libft
 	@rm -f $(NAME) $(OBJECTS) $(LIB)
 	@echo "Cleaning done !\n"
 
