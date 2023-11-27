@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:01:55 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 16:31:30 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:58:47 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_swap(t_list *stack)
 {
-	void	*tmp;
+	int	tmp;
 
-	tmp = stack->content;
-	stack->content = stack->next->content;
-	stack->next->content = tmp;
+	tmp = stack->nbr;
+	stack->nbr = stack->next->nbr;
+	stack->next->nbr = tmp;
 }
 
 void	sa(t_list *a)

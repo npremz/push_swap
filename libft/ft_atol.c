@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 00:53:00 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/27 16:49:41 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:51:30 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_init(int *i, int *sign, long int *nb, long int *last)
+static void	ft_init(int *i, int *sign, long long int *nb, long long int *last)
 {
 	*i = 0;
 	*sign = 1;
@@ -20,12 +20,12 @@ static void	ft_init(int *i, int *sign, long int *nb, long int *last)
 	*last = 0;
 }
 
-int	ft_atoi(const char *nptr)
+long int	ft_atol(const char *nptr)
 {
-	int			i;
-	int			sign;
-	long int	nb;
-	long int	last;
+	int				i;
+	int				sign;
+	long long int	nb;
+	long long int	last;
 
 	ft_init(&i, &sign, &nb, &last);
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))

@@ -10,7 +10,7 @@ SOURCES_BON = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_
 				ft_lstmap.c ft_lstdelone.c
 
 SOURCES_PERS = get_next_line_bonus.c get_next_line_utils_bonus.c chars.c numbers.c ft_printf.c ft_utoa.c ft_utoa_base.c \
-				ft_lutoa_base.c ft_isinstr.c ft_atoi_base.c
+				ft_lutoa_base.c ft_isinstr.c ft_atoi_base.c ft_atol.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

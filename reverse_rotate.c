@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 16:33:01 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 16:46:37 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:26:46 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_reverse_rotate(t_list **stack)
 	if (!*stack || !stack || len == 1)
 		return ;
 	last = ft_lstlast(*stack);
-	printf("%s\n", (char *)last->prev->content);
 	last->prev->next = NULL;
 	last->next = *stack;
 	last->prev = NULL;

@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:30:10 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 16:42:55 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:13:46 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,30 @@
 
 int	main(int ac, char *av[])
 {
-	char	**argv;
 	t_list	*a;
 	t_list	*b;
 
-	argv = ft_getargs(ac, av);
-	if (!argv)
+	if (ac == 1)
 		return (1);
-	a = ft_stackinit(argv);
+	av = ft_getargs(ac, av);
+	if (!av)
+		return (1);
+	a = ft_stackinit(av);
 	b = NULL;
 	if (!a)
-		return (ft_free_split(argv), 1);
-	rra(&a);
+		return (1);
+	if (!ft_stackissort(a))
+	{
+		if (ft_lstsize(a) == 2)
+			sa(a);
+		else if (ft_lstsize(a) == 3)
+			ft_small_sort(&a);
+	}
 	while (a)
 	{
-		printf("a : %s, %p\n", (char *)a->content, a);
+		printf("%d\n", a->nbr);
 		a = a->next;
 	}
-	printf("\n");
-	while (b)
-	{
-		printf("b : %s, %p\n", (char *)b->content, b);
-		b = b->next;
-	}
+	ft_lstclear(&a);
 	return (0);
 }

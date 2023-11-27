@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:30:01 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 16:40:36 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/27 17:13:14 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ void	ft_reverse_rotate(t_list **stack);
 void	rra(t_list **a);
 void	rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
+bool	ft_stackissort(t_list *stack);
+t_list	*ft_get_min(t_list *stack);
+t_list	*ft_get_max(t_list *stack);
+void	ft_small_sort(t_list **stack);
 
 #endif

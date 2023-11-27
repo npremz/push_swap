@@ -6,14 +6,13 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:16:07 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 16:19:09 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:11:20 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst)
 {
-	(*del)(lst->content);
 	free(lst);
 }

@@ -2,7 +2,8 @@ NAME = push_swap
 
 HEADER = ./
 
-SOURCES = main.c parsing.c free_utils.c stack_utils.c swap.c push.c rotate.c reverse_rotate.c
+SOURCES = main.c parsing.c free_utils.c stack_utils.c swap.c push.c rotate.c \
+			reverse_rotate.c small_sort.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

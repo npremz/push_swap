@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:17:12 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/23 16:09:43 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:38:49 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isvalid(char *str)
 	size_t	i;
 
 	i = 0;
-	if (str[i] == '-')
+	if (str[i] == '-' && str[i] == '+')
 		++i;
 	while (str[i])
 	{
