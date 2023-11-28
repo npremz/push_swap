@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:30:01 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/27 17:13:14 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:59:58 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,10 @@ bool	ft_stackissort(t_list *stack);
 t_list	*ft_get_min(t_list *stack);
 t_list	*ft_get_max(t_list *stack);
 void	ft_small_sort(t_list **stack);
+void	ft_sort_stacks(t_list **a, t_list **b);
+void	ft_setindex(t_list *a);
+void	ft_settarget_a(t_list *a, t_list *b);
+void	ft_getcost(t_list *a, t_list *b);
+void	ft_setcheapest(t_list *stack);
 
 #endif

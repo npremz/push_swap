@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:52:08 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/27 16:54:57 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:21:41 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_list	*ft_lstnew(void *content)
 		elem->nbr = value;
 		elem->next = NULL;
 		elem->prev = NULL;
+		elem->target = NULL;
 	}
 	return (elem);
 }

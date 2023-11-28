@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:02:21 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/27 17:05:46 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:29:25 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_stackinit(char **argv)
 		node = ft_lstnew(argv[i]);
 		if (!node)
 			return (ft_lstclear(&stack), NULL);
-		ft_lstadd_front(&stack, node);
+		ft_lstadd_back(&stack, node);
 		++i;
 	}
 	ft_free_split(argv);
