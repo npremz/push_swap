@@ -108,10 +108,10 @@ static char	*ft_read(char *stash, char **buff, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*buff[OPEN_MAX];
+	static char	*buff[1024];
 	char		*stash;
 
-	if (fd < 0 || read(fd, 0, 0) == -1 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
+	if (fd < 0 || read(fd, 0, 0) == -1 || BUFFER_SIZE <= 0 || fd >= 1024)
 		return (ft_free_gnl(&buff[fd], 1, NULL), NULL);
 	stash = ft_calloc(1, sizeof(char));
 	if (!stash)

@@ -28,6 +28,8 @@ t_list	*ft_lstnew(void *content)
 		elem->nbr = value;
 		elem->next = NULL;
 		elem->prev = NULL;
+		elem->above_median = false;
+		elem->cheapest = false;
 		elem->target = NULL;
 	}
 	return (elem);

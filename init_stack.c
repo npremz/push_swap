@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:14:42 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 16:52:56 by npremont         ###   ########.fr       */
+/*   Created: 2023/11/22 18:30:10 by npremont          #+#    #+#             */
+/*   Updated: 2023/11/28 10:30:56 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_init_stack_a(t_list *a, t_list *b)
 {
-	if (write(fd, s, ft_strlen(s)) == -1)
-		return ;
-	if (write(fd, "\n", 1) == -1)
-		return ;
+	ft_setindex(a);
+	ft_setindex(b);
+	ft_settarget_a(a, b);
+	ft_getcost(a, b);
+	ft_setcheapest(a);
+}
+
+void	ft_init_stack_b(t_list *a, t_list *b)
+{
+	ft_setindex(a);
+	ft_setindex(b);
+	ft_settarget_b(a, b);
 }

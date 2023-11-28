@@ -48,3 +48,26 @@ void	pb(t_list **b, t_list **a)
 	ft_printf("pb\n");
 }
 
+void	ft_prep_for_push(t_list **stack, t_list *top_node, char name)
+{
+	while (*stack != top_node)
+	{
+		if (name == 'a')
+		{
+			if (top_node->above_median)
+			{
+				ra(stack);
+			}
+			else
+				rra(stack);
+		}
+		if (name == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack);
+			else
+				rrb(stack);
+		}
+		break;
+	}
+}

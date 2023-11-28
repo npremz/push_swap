@@ -35,12 +35,6 @@ int	main(int ac, char *av[])
 		else
 			ft_sort_stacks(&a, &b);
 	}
-	while (a)
-	{
-		printf("%d\n", a->nbr);
-		printf("target: %d\n", a->target->nbr);
-		a = a->next;
-	}
 	ft_lstclear(&a);
 	return (0);
 }

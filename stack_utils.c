@@ -85,3 +85,20 @@ t_list	*ft_get_max(t_list *stack)
 	}
 	return (max_node);
 }
+
+t_list	*ft_get_cheapest(t_list *stack)
+{
+	t_list	*cheapest;
+
+	if (!stack)
+		return (NULL);
+	cheapest = NULL;
+	while (stack)
+	{
+		printf("Your boolean variable is: %d\n", stack->cheapest);
+		if (stack->cheapest)
+			cheapest = stack;
+		stack = stack->next;
+	}
+	return (cheapest);
+}

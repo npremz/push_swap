@@ -18,9 +18,9 @@ OBJECTS_BON = $(SOURCES_BON:.c=.o)
 
 OBJECTS_PERS = $(SOURCES_PERS:.c=.o)
 
-HEADER = libft.h
+HEADER = .
 
-GCC_FLAGS = -Wall -Wextra -Werror -g  -fsanitize=address
+GCC_FLAGS = -g  -fsanitize=address
 
 all: $(NAME)
 	@echo "\033[0;32m"

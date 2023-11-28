@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 15:14:42 by npremont          #+#    #+#             */
-/*   Updated: 2023/10/16 16:52:56 by npremont         ###   ########.fr       */
+/*   Created: 2023/11/24 15:51:29 by npremont          #+#    #+#             */
+/*   Updated: 2023/11/24 16:39:54 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_rotate_both(t_list **a, t_list **b, t_list *cheapest)
 {
-	if (write(fd, s, ft_strlen(s)) == -1)
-		return ;
-	if (write(fd, "\n", 1) == -1)
-		return ;
+	while (*b != cheapest->target && *a != cheapest)
+	{
+		rr(a, b);
+	}
+	ft_setindex(*a);
+	ft_setindex(*b);
+}
+
+void	ft_rev_rotate_both(t_list **a, t_list **b, t_list *cheapest)
+{
+	while (*b != cheapest->target && *a != cheapest)
+		rrr(a, b);
+	ft_setindex(*a);
+	ft_setindex(*b);
 }

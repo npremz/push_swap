@@ -39,7 +39,6 @@ void	ft_settarget_a(t_list *a, t_list *b)
 	t_list	*current_b;
 	long	val;
 
-	val = b->nbr;
 	while (a)
 	{
 		current_b = b;
@@ -54,8 +53,32 @@ void	ft_settarget_a(t_list *a, t_list *b)
 			current_b = current_b->next;
 		}
 		if (a->target == NULL)
-			a->target = ft_lstlast(b);
+			a->target = ft_get_max(b);
 		a = a->next;
+	}
+}
+
+void	ft_settarget_b(t_list *a, t_list *b)
+{
+	t_list	*current_a;
+	long	val;
+
+	while (b)
+	{
+		current_a = a;
+		val = LONG_MAX;
+		while (current_a)
+		{
+			if (current_a->nbr < val && current_a->nbr > b->nbr)
+			{
+				b->target = current_a;
+				val = current_a->nbr;
+			}
+			current_a = current_a->next;
+		}
+		if (b->target == NULL)
+			b->target = ft_get_min(b);
+		b = b->next;
 	}
 }
 
