@@ -20,7 +20,7 @@ OBJECTS_PERS = $(SOURCES_PERS:.c=.o)
 
 HEADER = .
 
-GCC_FLAGS = -g  -fsanitize=address
+GCC_FLAGS = -Werror -Wall -Wextra
 
 all: $(NAME)
 	@echo "\033[0;32m"

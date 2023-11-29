@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 09:34:13 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/28 15:58:24 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:16:32 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_setindex(t_list *stack)
 void	ft_settarget_a(t_list *a, t_list *b)
 {
 	t_list	*current_b;
+	t_list	*target_node;
 	long	val;
 
 	while (a)
@@ -47,13 +48,15 @@ void	ft_settarget_a(t_list *a, t_list *b)
 		{
 			if (current_b->nbr > val && current_b->nbr < a->nbr)
 			{
-				a->target = current_b;
+				target_node = current_b;
 				val = current_b->nbr;
 			}
 			current_b = current_b->next;
 		}
-		if (a->target == NULL)
+		if (val == LONG_MIN)
 			a->target = ft_get_max(b);
+		else
+			a->target = target_node;
 		a = a->next;
 	}
 }
@@ -61,6 +64,7 @@ void	ft_settarget_a(t_list *a, t_list *b)
 void	ft_settarget_b(t_list *a, t_list *b)
 {
 	t_list	*current_a;
+	t_list	*target_node;
 	long	val;
 
 	while (b)
@@ -71,13 +75,15 @@ void	ft_settarget_b(t_list *a, t_list *b)
 		{
 			if (current_a->nbr < val && current_a->nbr > b->nbr)
 			{
-				b->target = current_a;
+				target_node = current_a;
 				val = current_a->nbr;
 			}
 			current_a = current_a->next;
 		}
-		if (b->target == NULL)
-			b->target = ft_get_min(b);
+		if (val == LONG_MAX)
+			b->target = ft_get_min(a);
+		else
+			b->target = target_node;
 		b = b->next;
 	}
 }

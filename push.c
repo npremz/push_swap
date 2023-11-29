@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:37:30 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/24 15:59:50 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/29 10:15:49 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,5 @@ void	ft_prep_for_push(t_list **stack, t_list *top_node, char name)
 			else
 				rrb(stack);
 		}
-		break;
 	}
 }

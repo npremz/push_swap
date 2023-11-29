@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:17:12 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/28 10:29:06 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:39:40 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isvalid(char *str)
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0)
-			return (0);
+			return (ft_printf("Error\n"), 0);
 		++i;
 	}
 	return (1);
@@ -32,6 +32,7 @@ char	**ft_checkargs(char **argv)
 {
 	size_t	i;
 	size_t	j;
+	size_t	len;
 
 	i = 0;
 	j = i + 1;
@@ -42,8 +43,12 @@ char	**ft_checkargs(char **argv)
 		j = i + 1;
 		while (argv[j])
 		{
-			if (ft_strncmp(argv[i], argv[j], ft_strlen(argv[i])) == 0)
-				return (ft_free_split(argv), NULL);
+			if (ft_strlen(argv[i]) > ft_strlen(argv[j]))
+				len = ft_strlen(argv[i]);
+			else
+				len = ft_strlen(argv[j]);
+			if (ft_strncmp(argv[i], argv[j], len) == 0)
+				return (ft_free_split(argv), ft_printf("Error\n"), NULL);
 			++j;
 		}
 		++i;

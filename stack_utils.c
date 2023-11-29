@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:02:21 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/28 10:29:25 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/29 10:07:24 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,13 @@ t_list	*ft_get_cheapest(t_list *stack)
 	cheapest = NULL;
 	while (stack)
 	{
-		printf("Your boolean variable is: %d\n", stack->cheapest);
+
 		if (stack->cheapest)
+		{
 			cheapest = stack;
+			return (cheapest);
+		}
 		stack = stack->next;
 	}
-	return (cheapest);
+	return (NULL);
 }

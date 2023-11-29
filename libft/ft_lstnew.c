@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:52:08 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/28 10:21:41 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/29 12:38:04 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstnew(void *content)
 	{
 		value = ft_atol((char *)content);
 		if (value > INT_MAX || value < INT_MIN)
-			return (free(elem), NULL);
+			return (free(elem), ft_printf("Error\n"), NULL);
 		elem->nbr = value;
 		elem->next = NULL;
 		elem->prev = NULL;
