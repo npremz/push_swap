@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 12:02:21 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/29 10:07:24 by npremont         ###   ########.fr       */
+/*   Updated: 2023/12/10 09:44:29 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_stackinit(char **argv)
 	{
 		node = ft_lstnew(argv[i]);
 		if (!node)
-			return (ft_lstclear(&stack), NULL);
+			return (ft_lstclear(&stack), ft_free_split(argv), NULL);
 		ft_lstadd_back(&stack, node);
 		++i;
 	}
@@ -95,7 +95,6 @@ t_list	*ft_get_cheapest(t_list *stack)
 	cheapest = NULL;
 	while (stack)
 	{
-
 		if (stack->cheapest)
 		{
 			cheapest = stack;

@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:17:12 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/29 12:39:40 by npremont         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:45:36 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ char	**ft_getargs(int argc, char **argv)
 		return (NULL);
 	i = 1;
 	tmp = ft_calloc(1, 1);
+	if (!tmp)
+		return (NULL);
 	while (i < argc)
 	{
 		tmp = ft_strjoin(tmp, argv[i]);
