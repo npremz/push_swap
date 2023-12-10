@@ -6,7 +6,7 @@
 /*   By: npremont <npremont@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:17:12 by npremont          #+#    #+#             */
-/*   Updated: 2023/11/30 11:45:36 by npremont         ###   ########.fr       */
+/*   Updated: 2023/12/10 14:33:15 by npremont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_isvalid(char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		++i;
+	if (!str[i])
+		return (ft_printf("Error\n"), 0);
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0)
